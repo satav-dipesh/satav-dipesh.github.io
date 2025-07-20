@@ -2,10 +2,143 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,700,300i,600i,700i|Raleway:600,800");
 
 /*
-	Paradigm Shift by HTML5 UP
+	Modern Portfolio Website
+	Based on Paradigm Shift by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+
+/* Custom Navigation Styles */
+#nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 1rem 0;
+	transition: all 0.3s ease;
+}
+
+#nav ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#nav ul li {
+	margin: 0 1.5rem;
+}
+
+#nav ul li a {
+	color: #333;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	transition: color 0.3s ease;
+	position: relative;
+}
+
+#nav ul li a:hover {
+	color: #6cc04a;
+}
+
+#nav ul li a:after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	bottom: -5px;
+	left: 50%;
+	background-color: #6cc04a;
+	transition: all 0.3s ease;
+	transform: translateX(-50%);
+}
+
+#nav ul li a:hover:after {
+	width: 100%;
+}
+
+/* Adjust body padding for fixed nav */
+body {
+	padding-top: 80px;
+}
+
+/* Hero section adjustments */
+.intro {
+	padding-top: 4rem !important;
+}
+
+/* Modern styling enhancements */
+.intro h1 {
+	font-size: 4rem;
+	font-weight: 800;
+	letter-spacing: 0.2rem;
+	margin-bottom: 0.5rem;
+}
+
+.intro h2 {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #6cc04a;
+	letter-spacing: 0.3rem;
+	margin-bottom: 2rem;
+}
+
+/* Social icons styling */
+.icons {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin: 2rem 0;
+}
+
+.icons li a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	background: #f8f9fa;
+	color: #333;
+	transition: all 0.3s ease;
+	border: 2px solid transparent;
+}
+
+.icons li a:hover {
+	background: #6cc04a;
+	color: white;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(108, 192, 74, 0.3);
+}
+
+/* Responsive navigation */
+@media screen and (max-width: 768px) {
+	#nav ul {
+		flex-direction: column;
+		padding: 1rem;
+	}
+	
+	#nav ul li {
+		margin: 0.5rem 0;
+	}
+	
+	body {
+		padding-top: 200px;
+	}
+	
+	.intro h1 {
+		font-size: 2.5rem;
+	}
+}
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,

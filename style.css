@@ -295,6 +295,160 @@ section {
     background: white;
 }
 
+/* Education Section */
+.education {
+    background: #f8fafc;
+}
+
+.education-timeline {
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+.education-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 60px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.education-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.education-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1e293b;
+}
+
+.education-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #6366f1;
+    margin-bottom: 12px;
+}
+
+.duration {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+    margin-bottom: 16px;
+    background: #f1f5f9;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.education-content > p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.education-highlight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    padding: 12px 16px;
+    border-radius: 12px;
+    border-left: 4px solid #f59e0b;
+}
+
+.education-highlight i {
+    color: #f59e0b;
+    font-size: 18px;
+}
+
+.education-highlight span {
+    color: #92400e;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.education-skills {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.skill-tag {
+    background: #e0e7ff;
+    color: #4338ca;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.achievements-section {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.achievements-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #1e293b;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.achievement-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: #f8fafc;
+    border-radius: 16px;
+}
+
+.achievement-item i {
+    font-size: 32px;
+    color: #6366f1;
+    margin-bottom: 16px;
+}
+
+.achievement-item h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1e293b;
+}
+
+.achievement-item p {
+    color: #64748b;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -415,8 +569,10 @@ section {
 
 .work-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .work-item {
@@ -649,5 +805,28 @@ section {
     
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .education-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .education-timeline {
+        padding: 0 20px;
+    }
+    
+    .achievements-section {
+        padding: 30px 20px;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .achievement-item {
+        padding: 20px 15px;
     }
 } 

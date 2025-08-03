@@ -1,37 +1,15 @@
-// Smooth scrolling for navigation links
+// Simple interactions for the minimal website
 document.addEventListener('DOMContentLoaded', function() {
-    // Handle navigation link clicks
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Add scroll effect to header
-    const header = document.querySelector('.header');
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // Add subtle fade-in animation
+    const content = document.querySelector('.content');
+    if (content) {
+        content.style.opacity = '0';
+        content.style.transform = 'translateY(20px)';
+        content.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         
-        if (scrollTop > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-        } else {
-            header.style.background = 'rgba(255, 255, 255, 0.9)';
-        }
-        
-        lastScrollTop = scrollTop;
-    });
+        setTimeout(() => {
+            content.style.opacity = '1';
+            content.style.transform = 'translateY(0)';
+        }, 200);
+    }
 }); 

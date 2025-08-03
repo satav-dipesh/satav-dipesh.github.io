@@ -20,8 +20,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #fff;
+            color: #fff;
+            background-color: #000;
             font-size: 16px;
             margin: 0;
             padding: 0;
@@ -47,13 +47,13 @@
         .resume-title {
             font-size: 28px;
             font-weight: 600;
-            color: #333;
+            color: #fff;
             margin-bottom: 8px;
         }
         
         .resume-subtitle {
             font-size: 16px;
-            color: #666;
+            color: #ccc;
             margin-bottom: 16px;
         }
         
@@ -94,31 +94,37 @@
             color: white;
         }
         
-        .pdf-container {
+        .resume-image-container {
             flex: 1;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
             min-height: 0;
+            overflow-y: auto;
+            padding: 10px 0;
         }
         
-        .pdf-viewer {
-            width: 100%;
-            height: 100%;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            flex: 1;
+        .resume-image {
+            max-width: 70%;
+            max-height: 80vh;
+            width: auto;
+            height: auto;
+            border: 1px solid #333;
+            border-radius: 0;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+            object-fit: contain;
         }
         
         .fallback-message {
             text-align: center;
             padding: 40px;
-            background: #f8f9fa;
+            background: #111;
             border-radius: 8px;
             margin-top: 20px;
         }
         
         .fallback-message p {
-            color: #666;
+            color: #ccc;
             margin-bottom: 16px;
         }
         
@@ -126,7 +132,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #666;
+            color: #ccc;
             text-decoration: none;
             font-size: 14px;
             margin-bottom: 10px;
@@ -136,12 +142,12 @@
         }
         
         .back-link:hover {
-            color: #007acc;
+            color: #fff;
         }
         
         /* Focus styles for accessibility */
         *:focus {
-            outline: 2px solid #007acc;
+            outline: 2px solid #fff;
             outline-offset: 2px;
         }
         
@@ -167,6 +173,11 @@
                 padding: 6px 16px;
                 font-size: 13px;
             }
+            
+            .resume-image {
+                max-width: 90%;
+                max-height: 70vh;
+            }
         }
     </style>
 </head>
@@ -182,32 +193,26 @@
             <h1 class="resume-title">Resume</h1>
             <p class="resume-subtitle">Computer Vision & AI Specialist</p>
             
-            <!-- Download buttons -->
+            <!-- Download button -->
             <div class="download-section">
                 <a href="dipesh_resume_np.pdf" 
                    download="Dipesh_Satav_Resume.pdf" 
                    class="download-btn">
                     📄 Download PDF
                 </a>
-                
-                <a href="dipesh_resume_np.pdf" 
-                   target="_blank" 
-                   class="download-btn secondary">
-                    👁️ View in New Tab
-                </a>
             </div>
         </div>
         
-        <!-- PDF Viewer -->
-        <div class="pdf-container">
-            <embed src="dipesh_resume_np.pdf" 
-                   type="application/pdf" 
-                   class="pdf-viewer"
-                   title="Dipesh Satav Resume">
+        <!-- Resume Image -->
+        <div class="resume-image-container">
+            <img src="dipesh_resume.png" 
+                 alt="Dipesh Satav Resume" 
+                 class="resume-image"
+                 onerror="this.style.display='none'; document.querySelector('.fallback-message').style.display='block';">
             
-            <!-- Fallback for browsers that don't support PDF embedding -->
-            <div class="fallback-message">
-                <p>Your browser doesn't support PDF viewing.</p>
+            <!-- Fallback if image doesn't load -->
+            <div class="fallback-message" style="display: none;">
+                <p>Resume image not found. Please download the PDF instead.</p>
                 <a href="dipesh_resume_np.pdf" 
                    download="Dipesh_Satav_Resume.pdf" 
                    class="download-btn">
@@ -227,27 +232,6 @@
                 // You can add analytics tracking here
             }
         });
-        
-        // Check if PDF loaded successfully
-        const pdfEmbed = document.querySelector('embed[type="application/pdf"]');
-        const fallbackMessage = document.querySelector('.fallback-message');
-        
-        // Hide fallback initially
-        if (fallbackMessage) {
-            fallbackMessage.style.display = 'none';
-        }
-        
-        // Show fallback if PDF doesn't load (simplified check)
-        setTimeout(() => {
-            try {
-                if (!pdfEmbed.contentDocument && fallbackMessage) {
-                    pdfEmbed.style.display = 'none';
-                    fallbackMessage.style.display = 'block';
-                }
-            } catch (e) {
-                // PDF might be loading fine, keep it visible
-            }
-        }, 2000);
     </script>
 </body>
 </html>

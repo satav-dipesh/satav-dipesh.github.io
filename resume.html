@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Dipesh Satav</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for resume page */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resume-header {
+            text-align: center;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+        
+        .resume-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .resume-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+        
+        .download-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .download-btn {
+            background: #007acc;
+            color: white;
+            padding: 8px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: background 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .download-btn:hover {
+            background: #005a9e;
+        }
+        
+        .download-btn.secondary {
+            background: transparent;
+            color: #007acc;
+            border: 1px solid #007acc;
+        }
+        
+        .download-btn.secondary:hover {
+            background: #007acc;
+            color: white;
+        }
+        
+        .pdf-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            flex: 1;
+        }
+        
+        .fallback-message {
+            text-align: center;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .fallback-message p {
+            color: #666;
+            margin-bottom: 16px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 10px;
+            transition: color 0.2s ease;
+            flex-shrink: 0;
+            align-self: flex-start;
+        }
+        
+        .back-link:hover {
+            color: #007acc;
+        }
+        
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 15px;
+            }
+            
+            .resume-title {
+                font-size: 24px;
+            }
+            
+            .resume-header {
+                margin-bottom: 15px;
+            }
+            
+            .download-section {
+                gap: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .download-btn {
+                padding: 6px 16px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Resume header -->
+        <div class="resume-header">
+            <!-- Back to home link -->
+            <a href="index.html" class="back-link">
+                ← Back to Portfolio
+            </a>
+            
+            <h1 class="resume-title">Resume</h1>
+            <p class="resume-subtitle">Computer Vision & AI Specialist</p>
+            
+            <!-- Download buttons -->
+            <div class="download-section">
+                <a href="dipesh_resume_np.pdf" 
+                   download="Dipesh_Satav_Resume.pdf" 
+                   class="download-btn">
+                    📄 Download PDF
+                </a>
+                
+                <a href="dipesh_resume_np.pdf" 
+                   target="_blank" 
+                   class="download-btn secondary">
+                    👁️ View in New Tab
+                </a>
+            </div>
+        </div>
+        
+        <!-- PDF Viewer -->
+        <div class="pdf-container">
+            <embed src="dipesh_resume_np.pdf" 
+                   type="application/pdf" 
+                   class="pdf-viewer"
+                   title="Dipesh Satav Resume">
+            
+            <!-- Fallback for browsers that don't support PDF embedding -->
+            <div class="fallback-message">
+                <p>Your browser doesn't support PDF viewing.</p>
+                <a href="dipesh_resume_np.pdf" 
+                   download="Dipesh_Satav_Resume.pdf" 
+                   class="download-btn">
+                    📄 Download Resume
+                </a>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <script>
+        // Simple analytics for download tracking
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('a[download]')) {
+                console.log('Resume downloaded');
+                // You can add analytics tracking here
+            }
+        });
+        
+        // Check if PDF loaded successfully
+        const pdfEmbed = document.querySelector('embed[type="application/pdf"]');
+        const fallbackMessage = document.querySelector('.fallback-message');
+        
+        // Hide fallback initially
+        if (fallbackMessage) {
+            fallbackMessage.style.display = 'none';
+        }
+        
+        // Show fallback if PDF doesn't load (simplified check)
+        setTimeout(() => {
+            try {
+                if (!pdfEmbed.contentDocument && fallbackMessage) {
+                    pdfEmbed.style.display = 'none';
+                    fallbackMessage.style.display = 'block';
+                }
+            } catch (e) {
+                // PDF might be loading fine, keep it visible
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

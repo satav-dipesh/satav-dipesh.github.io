@@ -4,31 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dipesh Satav</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1 class="name">Dipesh Satav</h1>
-        </header>
-
-        <main class="main">
-            <div class="content">
-                <p class="description">
-                    Computer Vision & AI Specialist currently pursuing Master's in Computer Science at University of Tsukuba. 
-                    Building intelligent systems that see, understand, and interact.
-                </p>
+    <div id="__nuxt">
+        <div>
+            <div class="container">
+                <!-- Accessibility announcer -->
+                <div class="sr-only" aria-live="assertive">Dipesh Satav portfolio has loaded</div>
                 
-                <div class="links">
-                    <a href="mailto:dipeshsatav@gmail.com" class="link">Email</a>
-                    <a href="https://linkedin.com/in/dipesh-satav" class="link" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/satav-dipesh" class="link" target="_blank">GitHub</a>
+                <!-- Main content -->
+                <div>
+                    <!-- Navigation header -->
+                    <header tabindex="0" class="header">
+                        <div tabindex="0" class="nav-section">
+                            <h1>Dipesh Satav</h1>
+                            <div class="header-links">
+                                <a href="resume.html" class="header-link">
+                                    Resume
+                                </a>
+                                
+                                <a href="https://linkedin.com/in/dipesh-satav" 
+                                   rel="noopener" 
+                                   target="_blank" 
+                                   class="header-link">
+                                    LinkedIn
+                                </a>
+                                
+                                <a href="https://github.com/satav-dipesh" 
+                                   rel="noopener" 
+                                   target="_blank" 
+                                   class="header-link">
+                                    GitHub
+                                </a>
+                                
+                                <a href="mailto:dipeshsatav@gmail.com" 
+                                   class="header-link">
+                                    Email
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- Portfolio sections -->
+                    <main>
+                        <header tabindex="0" class="section-header">
+                            <h2>Selected Works</h2>
+                        </header>
+
+                        <!-- Project links -->
+                        <section class="projects">
+                            <a href="/computer-vision-projects" class="project-link">
+                                Computer Vision Projects
+                            </a>
+                            
+                            <a href="/ai-applications" class="project-link">
+                                AI Applications
+                            </a>
+                            
+                            <a href="/data-engineering" class="project-link">
+                                Data Engineering
+                            </a>
+                            
+                            <a href="/research" class="project-link">
+                                Research & Publications
+                            </a>
+                        </section>
+
+
+
+                        <!-- About section -->
+                        <header tabindex="0" class="section-header">
+                            <h2>About</h2>
+                        </header>
+
+                        <section class="about">
+                            <p>Computer Vision & AI Specialist currently pursuing Master's in Computer Science at University of Tsukuba.</p>
+                        </section>
+                    </main>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>

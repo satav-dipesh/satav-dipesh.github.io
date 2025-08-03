@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Oswald', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     line-height: 1.6;
     color: #fff;
     background-color: #000;
@@ -28,16 +28,16 @@ body {
 
 /* Container */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    width: 100%;
+    margin: 0;
+    padding: 20px 20px;
 }
 
 /* Header */
 .header {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     border-bottom: 1px solid #333;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
 }
 
 .nav-section {
@@ -46,6 +46,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+    width: 100%;
 }
 
 .nav-section h1 {
@@ -90,17 +91,17 @@ body {
 /* Divisions Container */
 .divisions-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 20px;
-    height: 70vh;
-    margin-top: 40px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    height: 88vh;
+    margin-top: 20px;
 }
 
 .division {
     position: relative;
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-size: cover;
@@ -146,7 +147,6 @@ body {
 
 .division[data-page="art-and-literature"] {
     background-image: url('images/art-bw.jpg');
-    grid-column: span 2;
 }
 
 .division[data-page="art-and-literature"]:hover {
@@ -161,33 +161,38 @@ body {
 .division-content {
     text-align: center;
     padding: 30px;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
+    background: transparent;
+    border-radius: 0;
+    backdrop-filter: none;
     transition: background 0.3s ease;
 }
 
 .division:hover .division-content {
-    background: rgba(0, 0, 0, 0.7);
+    background: transparent;
 }
 
 .division-content h2 {
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 400;
     color: #fff;
+    opacity: 1;
     margin-bottom: 12px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
 }
 
-.division-content p {
-    font-size: 16px;
-    color: #fff;
-    opacity: 0.9;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+.division:hover .division-content h2 {
+    opacity: 0;
 }
 
 /* Focus styles for accessibility */
 *:focus {
+    outline: none;
+}
+
+/* Only show focus on keyboard navigation for divisions */
+.division:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 2px;
 }
@@ -195,11 +200,13 @@ body {
 /* Responsive design */
 @media (max-width: 768px) {
     .container {
-        padding: 20px 15px;
+        padding: 15px 15px;
+        width: 100%;
     }
     
     .header {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
     }
     
     .nav-section {
@@ -222,12 +229,20 @@ body {
         font-size: 13px;
     }
     
-    .section-header h2 {
-        font-size: 16px;
+    .divisions-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        height: auto;
+        gap: 6px;
     }
     
-    .project-link {
-        font-size: 15px;
-        padding: 12px 0;
+    .division {
+        min-height: 120px;
+    }
+    
+    .division-content h2 {
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: uppercase;
     }
 }

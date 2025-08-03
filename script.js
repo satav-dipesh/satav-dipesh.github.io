@@ -1,4 +1,4 @@
-// Simple portfolio interactions
+// Portfolio interactions
 document.addEventListener('DOMContentLoaded', function() {
     
     // Add loading announcement for accessibility
@@ -6,6 +6,28 @@ document.addEventListener('DOMContentLoaded', function() {
     if (announcer) {
         announcer.textContent = 'Dipesh Satav portfolio has loaded';
     }
+    
+    // Handle division clicks
+    const divisions = document.querySelectorAll('.division');
+    divisions.forEach(division => {
+        division.addEventListener('click', function() {
+            const page = this.getAttribute('data-page');
+            if (page) {
+                window.location.href = `${page}.html`;
+            }
+        });
+        
+        // Add keyboard support
+        division.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+        
+        // Make divisions focusable
+        division.setAttribute('tabindex', '0');
+    });
     
     // Add smooth scroll behavior for any internal links
     const internalLinks = document.querySelectorAll('a[href^="#"]');
@@ -22,37 +44,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add focus management for keyboard navigation
-    const focusableElements = document.querySelectorAll('[tabindex="0"]');
-    focusableElements.forEach(element => {
-        element.addEventListener('keydown', function(e) {
-            // Enhanced keyboard navigation could be added here
-            if (e.key === 'Enter' || e.key === ' ') {
-                if (this.tagName.toLowerCase() === 'a') {
-                    this.click();
-                }
-            }
-        });
-    });
-    
     // Simple fade-in animation for content
-    const sections = document.querySelectorAll('section, .header');
-    sections.forEach((section, index) => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    divisions.forEach((division, index) => {
+        division.style.opacity = '0';
+        division.style.transform = 'translateY(20px)';
+        division.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         
         setTimeout(() => {
-            section.style.opacity = '1';
-            section.style.transform = 'translateY(0)';
-        }, index * 100);
+            division.style.opacity = '1';
+            division.style.transform = 'translateY(0)';
+        }, index * 150);
     });
 });
 
 // Handle external link clicks with analytics (if needed)
 document.addEventListener('click', function(e) {
     if (e.target.matches('a[target="_blank"]')) {
-        // Could add analytics tracking here
         console.log('External link clicked:', e.target.href);
     }
 });

@@ -50,9 +50,20 @@ body {
 }
 
 .nav-section h1 {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 400;
     color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
 }
 
 .header-links {
@@ -216,7 +227,12 @@ body {
     }
     
     .nav-section h1 {
-        font-size: 20px;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+    }
+    
+    .logo {
+        height: 24px;
     }
     
     .header-links {

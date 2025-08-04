@@ -35,9 +35,8 @@ body {
 
 /* Header */
 .header {
-    margin-bottom: 30px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .nav-section {
@@ -58,12 +57,14 @@ body {
     gap: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    transform: scaleX(1.2) scaleY(0.7);
 }
 
 .logo {
-    height: 28px;
+    height: 42px;
     width: auto;
     object-fit: contain;
+    transform: none;
 }
 
 .header-links {
@@ -74,14 +75,15 @@ body {
 
 .header-link {
     text-decoration: none;
-    color: #ccc;
+    color: #fff;
     font-size: 14px;
     font-weight: 400;
     transition: color 0.2s ease;
+    text-transform: uppercase;
 }
 
 .header-link:hover {
-    color: #fff;
+    color: #ccc;
 }
 
 /* Section headers */
@@ -105,8 +107,8 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
     gap: 8px;
-    height: 88vh;
-    margin-top: 20px;
+    height: 94vh;
+    margin-top: 5px;
 }
 
 .division {
@@ -216,8 +218,8 @@ body {
     }
     
     .header {
-        margin-bottom: 20px;
-        padding-bottom: 10px;
+        margin-bottom: 8px;
+        padding-bottom: 5px;
     }
     
     .nav-section {
@@ -229,10 +231,12 @@ body {
     .nav-section h1 {
         font-size: 18px;
         letter-spacing: 1.5px;
+        transform: scaleX(1.2) scaleY(0.7);
     }
     
     .logo {
-        height: 24px;
+        height: 36px;
+        transform: none;
     }
     
     .header-links {

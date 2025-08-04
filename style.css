@@ -261,4 +261,35 @@ body {
         font-weight: 400;
         text-transform: uppercase;
     }
+    
+    /* Mobile: Show color images by default and keep text visible */
+    .division[data-page="research-and-engineering"] {
+        background-image: url('images/research-color.jpg');
+    }
+    
+    .division[data-page="photo-videography"] {
+        background-image: url('images/photo-color.jpg');
+    }
+    
+    .division[data-page="social-projects"] {
+        background-image: url('images/social-color.jpg');
+    }
+    
+    .division[data-page="athletics-and-sports"] {
+        background-image: url('images/athletics-color.jpg');
+    }
+    
+    .division[data-page="art-and-literature"] {
+        background-image: url('images/art-color.jpg');
+    }
+    
+    /* Remove hover effects on mobile */
+    .division:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    
+    .division:hover .division-content h2 {
+        opacity: 1;
+    }
 }

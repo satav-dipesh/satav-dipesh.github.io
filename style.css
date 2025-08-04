@@ -62,9 +62,17 @@ body {
 }
 
 .header-links {
-    display: flex;
+    display: flex !important;
     gap: 24px;
     align-items: center;
+    position: static;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    flex-direction: row;
+    min-width: auto;
+    box-shadow: none;
 }
 
 .header-link {
@@ -74,6 +82,9 @@ body {
     font-weight: 400;
     transition: color 0.2s ease;
     text-transform: uppercase;
+    padding: 0;
+    border-bottom: none;
+    text-align: left;
 }
 
 .header-link:hover {
@@ -82,7 +93,7 @@ body {
 
 /* Mobile menu toggle - hidden on desktop */
 .mobile-menu-toggle {
-    display: none;
+    display: none !important;
     background: none;
     border: none;
     color: #fff;
@@ -248,7 +259,7 @@ body {
     
     /* Show mobile menu toggle on mobile */
     .mobile-menu-toggle {
-        display: block;
+        display: block !important;
     }
     
     .nav-section h1 {
@@ -263,35 +274,35 @@ body {
     
     /* Mobile menu - hidden by default */
     .header-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: #000;
-        border: 1px solid #333;
-        border-radius: 8px;
-        padding: 16px;
-        flex-direction: column;
-        gap: 12px;
-        min-width: 160px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        z-index: 100;
+        display: none !important;
+        position: absolute !important;
+        top: 100% !important;
+        right: 0 !important;
+        background: #000 !important;
+        border: 1px solid #333 !important;
+        border-radius: 8px !important;
+        padding: 16px !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        min-width: 160px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+        z-index: 100 !important;
     }
     
     /* Show mobile menu when open */
     .header-links.mobile-menu-open {
-        display: flex;
+        display: flex !important;
     }
     
     .header-link {
-        font-size: 14px;
-        padding: 8px 0;
-        border-bottom: 1px solid #333;
-        text-align: center;
+        font-size: 14px !important;
+        padding: 8px 0 !important;
+        border-bottom: 1px solid #333 !important;
+        text-align: center !important;
     }
     
     .header-link:last-child {
-        border-bottom: none;
+        border-bottom: none !important;
     }
     
     .divisions-container {

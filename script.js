@@ -7,6 +7,28 @@ document.addEventListener('DOMContentLoaded', function() {
         announcer.textContent = 'Dipesh Satav portfolio has loaded';
     }
     
+    // Mobile menu toggle functionality
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const headerLinks = document.querySelector('.header-links');
+    
+    if (mobileMenuToggle && headerLinks) {
+        mobileMenuToggle.addEventListener('click', function() {
+            headerLinks.classList.toggle('mobile-menu-open');
+            
+            // Update aria-label for accessibility
+            const isOpen = headerLinks.classList.contains('mobile-menu-open');
+            this.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenuToggle.contains(e.target) && !headerLinks.contains(e.target)) {
+                headerLinks.classList.remove('mobile-menu-open');
+                mobileMenuToggle.setAttribute('aria-label', 'Open navigation menu');
+            }
+        });
+    }
+    
     // Handle division clicks
     const divisions = document.querySelectorAll('.division');
     divisions.forEach(division => {

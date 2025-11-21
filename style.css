@@ -123,18 +123,24 @@ body {
 .section-header h2 {
     font-size: 18px;
     font-weight: 500;
-    color: #ccc;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    border-radius: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Divisions Container */
 .divisions-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 22vh);
     gap: 8px;
-    height: 94vh;
+    /* height: 94vh; Removed to allow scrolling */
     margin-top: 5px;
 }
 
@@ -243,12 +249,12 @@ body {
         padding: 15px 15px;
         width: 100%;
     }
-    
+
     .header {
         margin-bottom: 8px;
         padding-bottom: 5px;
     }
-    
+
     .nav-section {
         flex-direction: row;
         justify-content: space-between;
@@ -256,12 +262,12 @@ body {
         gap: 15px;
         position: relative;
     }
-    
+
     /* Show mobile menu toggle on mobile */
     .mobile-menu-toggle {
         display: block !important;
     }
-    
+
     .nav-section h1 {
         font-size: 18px;
         letter-spacing: 0.8px;
@@ -271,7 +277,7 @@ body {
         margin: 0;
         padding: 0;
     }
-    
+
     /* Mobile menu - hidden by default */
     .header-links {
         display: none !important;
@@ -288,67 +294,67 @@ body {
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
         z-index: 100 !important;
     }
-    
+
     /* Show mobile menu when open */
     .header-links.mobile-menu-open {
         display: flex !important;
     }
-    
+
     .header-link {
         font-size: 14px !important;
         padding: 8px 0 !important;
         border-bottom: 1px solid #333 !important;
         text-align: center !important;
     }
-    
+
     .header-link:last-child {
         border-bottom: none !important;
     }
-    
+
     .divisions-container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5, 1fr);
         height: auto;
         gap: 6px;
     }
-    
+
     .division {
         min-height: 120px;
     }
-    
+
     .division-content h2 {
         font-size: 18px;
         font-weight: 400;
         text-transform: uppercase;
     }
-    
+
     /* Mobile: Show color images by default and keep text visible */
     .division[data-page="research-and-engineering"] {
         background-image: url('images/research-color.jpg');
     }
-    
+
     .division[data-page="photo-videography"] {
         background-image: url('images/photo-color.jpg');
     }
-    
+
     .division[data-page="social-projects"] {
         background-image: url('images/social-color.jpg');
     }
-    
+
     .division[data-page="athletics-and-sports"] {
         background-image: url('images/athletics-color.jpg');
     }
-    
+
     .division[data-page="art-and-literature"] {
         background-image: url('images/art-color.jpg');
     }
-    
+
     /* Remove hover effects on mobile */
     .division:hover {
         transform: none;
         box-shadow: none;
     }
-    
+
     .division:hover .division-content h2 {
         opacity: 1;
     }

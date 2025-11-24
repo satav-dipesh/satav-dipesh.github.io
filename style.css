@@ -213,6 +213,39 @@ body {
     transition: background 0.3s ease;
 }
 
+.division:hover .division-content {
+    background: transparent;
+}
+
+.division-content h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: #fff;
+    opacity: 1;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+/* Language switching styles */
+.lang-mr {
+    display: none;
+}
+
+.division:hover .lang-en {
+    display: none;
+}
+
+.division:hover .lang-mr {
+    display: inline;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+    outline: none;
+}
+
 /* Only show focus on keyboard navigation for divisions */
 .division:focus-visible {
     outline: 2px solid #fff;

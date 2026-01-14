@@ -160,43 +160,43 @@ body {
 
 /* Background images (you'll need to replace these with your actual image paths) */
 .division[data-page="research-and-engineering"] {
-    background-image: url('images/research-bw.jpg');
+    background-image: url('../../images/research-bw.jpg');
 }
 
 .division[data-page="research-and-engineering"]:hover {
-    background-image: url('images/research-color.jpg');
+    background-image: url('../../images/research-color.jpg');
 }
 
 .division[data-page="photo-videography"] {
-    background-image: url('images/photo-bw.jpg');
+    background-image: url('../../images/photo-bw.jpg');
 }
 
 .division[data-page="photo-videography"]:hover {
-    background-image: url('images/photo-color.jpg');
+    background-image: url('../../images/photo-color.jpg');
 }
 
 .division[data-page="social-projects"] {
-    background-image: url('images/social-bw.jpg');
+    background-image: url('../../images/social-bw.jpg');
 }
 
 .division[data-page="social-projects"]:hover {
-    background-image: url('images/social-color.jpg');
+    background-image: url('../../images/social-color.jpg');
 }
 
 .division[data-page="athletics-and-sports"] {
-    background-image: url('images/athletics-bw.jpg');
+    background-image: url('../../images/athletics-bw.jpg');
 }
 
 .division[data-page="athletics-and-sports"]:hover {
-    background-image: url('images/athletics-color.jpg');
+    background-image: url('../../images/athletics-color.jpg');
 }
 
 .division[data-page="art-and-literature"] {
-    background-image: url('images/art-bw.jpg');
+    background-image: url('../../images/art-bw.jpg');
 }
 
 .division[data-page="art-and-literature"]:hover {
-    background-image: url('images/art-color.jpg');
+    background-image: url('../../images/art-color.jpg');
 }
 
 .division:hover {
@@ -339,23 +339,23 @@ body {
 
     /* Mobile: Show color images by default and keep text visible */
     .division[data-page="research-and-engineering"] {
-        background-image: url('images/research-color.jpg');
+        background-image: url('../../images/research-color.jpg');
     }
 
     .division[data-page="photo-videography"] {
-        background-image: url('images/photo-color.jpg');
+        background-image: url('../../images/photo-color.jpg');
     }
 
     .division[data-page="social-projects"] {
-        background-image: url('images/social-color.jpg');
+        background-image: url('../../images/social-color.jpg');
     }
 
     .division[data-page="athletics-and-sports"] {
-        background-image: url('images/athletics-color.jpg');
+        background-image: url('../../images/athletics-color.jpg');
     }
 
     .division[data-page="art-and-literature"] {
-        background-image: url('images/art-color.jpg');
+        background-image: url('../../images/art-color.jpg');
     }
 
     /* Remove hover effects on mobile */

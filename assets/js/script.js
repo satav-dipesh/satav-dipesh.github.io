@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         division.addEventListener('click', function() {
             const page = this.getAttribute('data-page');
             if (page) {
-                window.location.href = `${page}.html`;
+                window.location.href = `pages/${page}.html`;
             }
         });
         

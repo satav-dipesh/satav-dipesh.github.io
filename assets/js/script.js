@@ -35,7 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
         division.addEventListener('click', function() {
             const page = this.getAttribute('data-page');
             if (page) {
-                window.location.href = `pages/${page}.html`;
+                // Map old page names to new subdirectory structure
+                const pageMap = {
+                    'research-and-engineering': 'research-engineering',
+                    'photo-videography': 'photo-videography',
+                    'social-projects': 'social-projects',
+                    'athletics-and-sports': 'athletics-sports',
+                    'art-and-literature': 'art-literature'
+                };
+                const targetDir = pageMap[page] || page;
+                window.location.href = `${targetDir}/index.html`;
             }
         });
         
